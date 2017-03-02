@@ -1,0 +1,26 @@
+<h1>Directive Lifecycle Hooks</h1>
+
+<p>
+  Below is a form that allows the user to specify the color they want the div below to be.
+<p>
+
+<form>
+  <p>
+    Background color of div: 
+    <input type="text" name="backgroundColor" [(ngModel)]="backgroundColor" />
+  </p>
+  <p>
+    Pointless field to fire a DoCheck: 
+    <input type="text" name="pointlessProperty" [(ngModel)]="pointlessProperty" />
+  </p>
+</form>
+
+<div *ngIf="showChildComponent">
+  <app-child [backgroundColor]="backgroundColor"></app-child>
+</div>
+
+<form>
+  <input type="checkbox" 
+         name="showChildComponent" 
+         [(ngModel)]="showChildComponent" /> Toggle Child component
+</form>
